@@ -94,534 +94,534 @@ jobs:
         }}
       storage-only-changed: ${{ steps.changed-files-storage.outputs.only_changed }}
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Get modified files (Common)
-      id: changed-files-common
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          support/checkstyle/**
-          support/revapi/**
-          debezium-api/**
-          debezium-assembly-descriptors/**
-          debezium-core/**
-          debezium-embedded/**
-          debezium-revapi/**
-          debezium-ide-configs/**
-          debezium-parent/pom.xml
-          debezium-bom/pom.xml
-          debezium-storage/**
-          debezium-scripting/**
-          pom.xml
-          .mvn/**
-          .github/actions/**
-          .github/workflows/debezium-workflow-pr.yml
-    - name: Get modified files (MongoDB)
-      id: changed-files-mongodb
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-mongodb/**
-    - name: Get modified files (MySQL)
-      id: changed-files-mysql
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-mysql/**
-          debezium-connector-binlog/**
-    - name: Get modified files (MariaDB)
-      id: changed-files-mariadb
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-mariadb/**
-          debezium-connector-binlog/**
-    - name: Get modified files (PostgreSQL)
-      id: changed-files-postgresql
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-postgres/**
-    - name: Get modified files (Oracle)
-      id: changed-files-oracle
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-oracle/**
-    - name: Get modified files (SQL Server)
-      id: changed-files-sqlserver
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-sqlserver/**
-    - name: Get modified files (JDBC)
-      id: changed-files-jdbc
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connector-jdbc/**
-    - name: Get modified files (Quarkus Outbox)
-      id: changed-files-outbox
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-quarkus-outbox/**
-          debezium-quarkus-outbox-common/**
-          debezium-quarkus-outbox-reactive/**
-    - name: Get modified files (REST Extension)
-      id: changed-files-rest-extension
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-connect-rest-extension/**
-    - name: Get modified files (Schema Generator)
-      id: changed-files-schema-generator
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-schema-generator/**
-    - name: Get modified files (Debezium Testing)
-      id: changed-files-debezium-testing
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-testing/**
-    - name: Get modified files (Debezium Testing MongoDB)
-      id: changed-files-debezium-testing-mongodb
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-testing/**/MongoDb*.java
-    - name: Get modified files (MySQL DDL parser)
-      id: changed-files-mysql-ddl-parser
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-ddl-parser/src/main/antlr4/io/debezium/ddl/parser/mysql/**
-          debezium-ddl-parser/src/main/java/io/debezium/antlr/**
-          debezium-ddl-parser/src/test/resources/mysql/examples/**
-    - name: Get modified files (Oracle DDL parser)
-      id: changed-files-oracle-ddl-parser
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-ddl-parser/src/main/antlr4/io/debezium/ddl/parser/oracle/**
-          debezium-ddl-parser/src/main/java/io/debezium/antlr/**
-          debezium-ddl-parser/src/main/java/io/debezium/ddl/parser/oracle/**
-          debezium-ddl-parser/src/test/resources/oracle/examples/**
-    - name: Get modified files (Documentation)
-      id: changed-files-documentation
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          documentation/**
-    - name: Get modified files (Storage)
-      id: changed-files-storage
-      uses: tj-actions/changed-files@v45.0.2
-      with:
-        files: |-
-          debezium-storage/**
+      - name: Checkout Action
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get modified files (Common)
+        id: changed-files-common
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            support/checkstyle/**
+            support/revapi/**
+            debezium-api/**
+            debezium-assembly-descriptors/**
+            debezium-core/**
+            debezium-embedded/**
+            debezium-revapi/**
+            debezium-ide-configs/**
+            debezium-parent/pom.xml
+            debezium-bom/pom.xml
+            debezium-storage/**
+            debezium-scripting/**
+            pom.xml
+            .mvn/**
+            .github/actions/**
+            .github/workflows/debezium-workflow-pr.yml
+      - name: Get modified files (MongoDB)
+        id: changed-files-mongodb
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-mongodb/**
+      - name: Get modified files (MySQL)
+        id: changed-files-mysql
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-mysql/**
+            debezium-connector-binlog/**
+      - name: Get modified files (MariaDB)
+        id: changed-files-mariadb
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-mariadb/**
+            debezium-connector-binlog/**
+      - name: Get modified files (PostgreSQL)
+        id: changed-files-postgresql
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-postgres/**
+      - name: Get modified files (Oracle)
+        id: changed-files-oracle
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-oracle/**
+      - name: Get modified files (SQL Server)
+        id: changed-files-sqlserver
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-sqlserver/**
+      - name: Get modified files (JDBC)
+        id: changed-files-jdbc
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connector-jdbc/**
+      - name: Get modified files (Quarkus Outbox)
+        id: changed-files-outbox
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-quarkus-outbox/**
+            debezium-quarkus-outbox-common/**
+            debezium-quarkus-outbox-reactive/**
+      - name: Get modified files (REST Extension)
+        id: changed-files-rest-extension
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-connect-rest-extension/**
+      - name: Get modified files (Schema Generator)
+        id: changed-files-schema-generator
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-schema-generator/**
+      - name: Get modified files (Debezium Testing)
+        id: changed-files-debezium-testing
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-testing/**
+      - name: Get modified files (Debezium Testing MongoDB)
+        id: changed-files-debezium-testing-mongodb
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-testing/**/MongoDb*.java
+      - name: Get modified files (MySQL DDL parser)
+        id: changed-files-mysql-ddl-parser
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-ddl-parser/src/main/antlr4/io/debezium/ddl/parser/mysql/**
+            debezium-ddl-parser/src/main/java/io/debezium/antlr/**
+            debezium-ddl-parser/src/test/resources/mysql/examples/**
+      - name: Get modified files (Oracle DDL parser)
+        id: changed-files-oracle-ddl-parser
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-ddl-parser/src/main/antlr4/io/debezium/ddl/parser/oracle/**
+            debezium-ddl-parser/src/main/java/io/debezium/antlr/**
+            debezium-ddl-parser/src/main/java/io/debezium/ddl/parser/oracle/**
+            debezium-ddl-parser/src/test/resources/oracle/examples/**
+      - name: Get modified files (Documentation)
+        id: changed-files-documentation
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            documentation/**
+      - name: Get modified files (Storage)
+        id: changed-files-storage
+        uses: tj-actions/changed-files@v45.0.2
+        with:
+          files: |-
+            debezium-storage/**
   build_cache:
     name: build_cache
     needs:
-    - file_changes
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Debezium Server)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-server
-        path: server
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - id: maven-cache-check
-      uses: actions/cache@v4
-      with:
-        path: ~/.m2/repository
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-        restore-keys: |-
-          maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-          maven-debezium-test-push-build-${{ hashFiles('core/**/pom.xml') }}
-          maven-debezium-test-push-build-
-    - name: Download dependencies (Core)
-      run: |-
-        ./core/mvnw -B -ntp clean install -f core/pom.xml -pl ${{ env.MAVEN_FULL_BUILD_PROJECTS }} -Dformat.skip=true -Dcheckstyle.skip=true -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat="YYYY-MM-dd HH:mm:ss,SSS" -DskipTests=true -DskipITs=true
-    - name: Download dependencies (Debezium Server)
-      continue-on-error: true
-      run: |-
-        ./server/mvnw -B -ntp clean install -f server/pom.xml -Dformat.skip=true -Dcheckstyle.skip=true -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat="YYYY-MM-dd HH:mm:ss,SSS" -DskipTests=true -DskipITs=true
+      - name: Checkout Action (Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Debezium Server)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-server
+          path: server
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - id: maven-cache-check
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+          restore-keys: |-
+            maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+            maven-debezium-test-push-build-${{ hashFiles('core/**/pom.xml') }}
+            maven-debezium-test-push-build-
+      - name: Download dependencies (Core)
+        run: |-
+          ./core/mvnw -B -ntp clean install -f core/pom.xml -pl ${{ env.MAVEN_FULL_BUILD_PROJECTS }} -Dformat.skip=true -Dcheckstyle.skip=true -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat="YYYY-MM-dd HH:mm:ss,SSS" -DskipTests=true -DskipITs=true
+      - name: Download dependencies (Debezium Server)
+        continue-on-error: true
+        run: |-
+          ./server/mvnw -B -ntp clean install -f server/pom.xml -Dformat.skip=true -Dcheckstyle.skip=true -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat="YYYY-MM-dd HH:mm:ss,SSS" -DskipTests=true -DskipITs=true
   check_style:
     name: check_style
     needs:
-    - build_cache
+      - build_cache
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/checkstyle-format
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/checkstyle-format
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_mongodb:
     strategy:
       matrix:
         version-mongo-server:
-        - '5.0'
-        - '7.0'
+          - '5.0'
+          - '7.0'
       fail-fast: false
     name: build_mongodb (${{ matrix.version-mongo-server }})
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-mongodb
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
-        version-mongo-server: ${{ matrix.version-mongo-server }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-mongodb
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+          version-mongo-server: ${{ matrix.version-mongo-server }}
   build_mysql:
     strategy:
       matrix:
         profile:
-        - mysql-ci
-        - mysql-ci-gtids
-        - mysql-ci-percona
-        - mysql-ci-ssl
+          - mysql-ci
+          - mysql-ci-gtids
+          - mysql-ci-percona
+          - mysql-ci-ssl
         version-mysql-server:
-        - '8.0'
-        - '8.4'
-        - '9.0'
+          - '8.0'
+          - '8.4'
+          - '9.0'
       fail-fast: false
     name: build_mysql (${{ matrix.profile }}, ${{ matrix.version-mysql-server }})
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-mysql
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
-        version-mysql-server: ${{ matrix.version-mysql-server }}
-        profile: ${{ matrix.profile }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-mysql
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+          version-mysql-server: ${{ matrix.version-mysql-server }}
+          profile: ${{ matrix.profile }}
   build_mariadb:
     strategy:
       matrix:
         profile:
-        - mariadb-ci
-        - mariadb-ci-gtids
+          - mariadb-ci
+          - mariadb-ci-gtids
       fail-fast: false
     name: build_mariadb (${{ matrix.profile }})
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-mariadb
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
-        profile: ${{ matrix.profile }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-mariadb
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+          profile: ${{ matrix.profile }}
   build_postgresql:
     strategy:
       matrix:
         profile:
-        - assembly,postgres-12
-        - assembly,postgres-16,pgoutput-decoder
+          - assembly,postgres-12
+          - assembly,postgres-16,pgoutput-decoder
       fail-fast: false
     name: build_postgresql (${{ matrix.profile }})
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-postgres
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
-        profile: ${{ matrix.profile }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-postgres
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+          profile: ${{ matrix.profile }}
   build_sqlserver:
     name: build_sqlserver
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-sqlserver
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-sqlserver
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_oracle:
     name: build_oracle
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-oracle
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-oracle
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_outbox:
     name: build_outbox
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-outbox
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-outbox
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_rest_extension:
     name: build_rest_extension
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-rest-extension
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-rest-extension
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_schema_generator:
     name: build_schema_generator
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-schema-generator
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-schema-generator
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_debezium_testing:
     name: build_debezium_testing
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-testing
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-testing
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_storage:
     name: build_storage
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-storage
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-storage
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_cassandra:
     name: build_cassandra
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Cassandra)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-cassandra
-        path: cassandra
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-cassandra
-      with:
-        path-core: core
-        path-cassandra: cassandra
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Cassandra)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-cassandra
+          path: cassandra
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-cassandra
+        with:
+          path-core: core
+          path-cassandra: cassandra
   build_db2:
     name: build_db2
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Db2)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-db2
-        path: db2
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-db2
-      with:
-        path-core: core
-        path-db2: db2
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Db2)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-db2
+          path: db2
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-db2
+        with:
+          path-core: core
+          path-db2: db2
   build_ibmi:
     name: build_ibmi
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (IBMi)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-ibmi
-        path: ibmi
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-ibmi
-      with:
-        path-core: core
-        path-ibmi: ibmi
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (IBMi)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-ibmi
+          path: ibmi
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-ibmi
+        with:
+          path-core: core
+          path-ibmi: ibmi
   build_informix:
     name: build_informix
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Informix)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-informix
-        path: informix
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-informix
-      with:
-        path-core: core
-        path-informix: informix
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Informix)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-informix
+          path: informix
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-informix
+        with:
+          path-core: core
+          path-informix: informix
   build_vitess:
     name: build_vitess
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Vitess)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-vitess
-        path: vitess
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-vitess
-      with:
-        path-core: core
-        path-vitess: vitess
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Vitess)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-vitess
+          path: vitess
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-vitess
+        with:
+          path-core: core
+          path-vitess: vitess
   build_spanner:
     name: build_spanner
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Spanner)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-connector-spanner
-        path: spanner
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-spanner
-      with:
-        path-core: core
-        path-spanner: spanner
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Spanner)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-connector-spanner
+          path: spanner
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-spanner
+        with:
+          path-core: core
+          path-spanner: spanner
   build_jdbc:
     name: build_jdbc
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action
-      uses: actions/checkout@v4
-    - uses: ./.github/actions/build-debezium-jdbc
-      with:
-        maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
+      - name: Checkout Action
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/build-debezium-jdbc
+        with:
+          maven-cache-key: maven-debezium-test-build-${{ hashFiles('**/pom.xml') }}
   build_debezium_server:
     name: build_debezium_server
     needs:
-    - check_style
-    - file_changes
+      - check_style
+      - file_changes
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Action (Debezium Core)
-      uses: actions/checkout@v4
-      with:
-        path: core
-    - name: Checkout Action (Debezium Server)
-      uses: actions/checkout@v4
-      with:
-        repository: debezium/debezium-server
-        path: server
-        ref: ${{ github.event.pull_request.base.ref }}
-    - uses: ./core/.github/actions/setup-java
-    - uses: ./core/.github/actions/maven-cache
-      with:
-        key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
-    - uses: ./core/.github/actions/build-debezium-server
-      with:
-        path-core: core
-        path-server: server
+      - name: Checkout Action (Debezium Core)
+        uses: actions/checkout@v4
+        with:
+          path: core
+      - name: Checkout Action (Debezium Server)
+        uses: actions/checkout@v4
+        with:
+          repository: debezium/debezium-server
+          path: server
+          ref: ${{ github.event.pull_request.base.ref }}
+      - uses: ./core/.github/actions/setup-java
+      - uses: ./core/.github/actions/maven-cache
+        with:
+          key: maven-debezium-test-build-${{ hashFiles('core/**/pom.xml') }}
+      - uses: ./core/.github/actions/build-debezium-server
+        with:
+          path-core: core
+          path-server: server
 'on':
-- push
-- workflow_dispatch
+  - push
+  - workflow_dispatch
